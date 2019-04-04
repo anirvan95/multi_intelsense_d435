@@ -1,0 +1,12 @@
+<launch>
+  <param name="robot_description"
+    command="$(find xacro)/xacro --inorder '$(find multi_d435_description)/urdf/multi_d435.xacro'" />
+
+
+  <!-- Combine joint values -->
+  <node name="multi_d435_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <!-- Show in Rviz   -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find multi_d435_description)/launch/multi_d435.rviz"/>
+
+</launch>
